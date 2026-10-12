@@ -105,7 +105,14 @@ hr{border:0;border-top:2px solid var(--rule)}
 .proj:last-child{border-bottom:0}
 .proj:hover{background:var(--lime)}
 .proj > *{padding:28px 0}
-.proj .num{border-right:2px solid var(--rule);font-size:15px}
+.proj .num{border-right:2px solid var(--rule);font-size:15px;display:flex;flex-direction:column;gap:10px;padding-right:28px}
+.logo{width:100%;max-width:120px;aspect-ratio:1;border:2px solid var(--ink);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.logo img{width:100%;height:100%;object-fit:cover}
+.logo.pad img{object-fit:contain;padding:10px}
+.logo.txt span{color:var(--white);font-size:21px;text-align:center;padding:8px;line-height:.95}
+.logo.ink span{color:var(--ink);font-size:18px}
+.proj.feature .logo{border-color:var(--white)}
+.proj{align-items:start}
 .proj h3{font-size:clamp(34px,3.4vw,52px);padding-left:28px;padding-right:20px}
 .proj .who{display:block;margin-top:10px}
 .proj p{padding-right:32px;color:#222}
@@ -182,7 +189,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .svc:last-child{border-bottom:0}
   .proj{grid-template-columns:1fr;padding:0}
   .proj > *{padding:6px 0}
-  .proj .num{border-right:0;padding-top:24px}
+  .proj .num{border-right:0;padding-top:24px;flex-direction:row;align-items:center}
+  .logo{max-width:96px}
+  .logo.txt span{font-size:16px}
+  .logo.ink span{font-size:14px}
   .proj h3{padding-left:0}
   .proj .stack{flex-direction:row;flex-wrap:wrap;padding-bottom:24px}
   .proj.feature,.proj:hover{margin:0 -28px;padding:0 28px}
@@ -229,7 +239,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <div class="hero-right">
       <div class="photo">
         <img src="nicolas-ollier.jpg" alt="Portrait de Nicolas Ollier" width="900" height="1012">
-        <span class="stamp mono">Bordeaux · À distance</span>
+        <span class="stamp mono">Paris · Bordeaux · À distance</span>
       </div>
       <div class="cap mono"><span>Nicolas Ollier</span><span>Ancien commerçant et chef d'entreprise</span></div>
     </div>
@@ -295,42 +305,42 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <div class="sec-head"><div class="idx mono">02 / En détail</div><h2 class="cond">Réalisations</h2></div>
 
     <article class="proj feature">
-      <div class="num mono">P.01</div>
+      <div class="num"><div class="logo" style="background:#2f1c15"><img src="logos/tapandsee.webp" alt="Logo Tap&amp;See" loading="lazy"></div><span class="mono">P.01</span></div>
       <h3 class="cond">Tap&See<span class="who mono">Aide à la vente en magasin</span></h3>
-      <p>Le client voit le canapé dans la photo de son salon avant d'acheter. <strong>Utilisé dans 2 magasins, dont Cuir Center.</strong></p>
+      <p>Le client voit le canapé dans la photo de son salon avant d'acheter. <strong>Utilisé dans des magasins Cuir Center.</strong></p>
       <div class="stack mono"><span>IA générative</span><span>Web app</span><span>Tablette</span></div>
     </article>
 
     <article class="proj">
-      <div class="num mono">P.02</div>
+      <div class="num"><div class="logo pad" style="background:#fff"><img src="logos/confort-sec.webp" alt="Logo Confort Sec" loading="lazy"></div><span class="mono">P.02</span></div>
       <h3 class="cond">confort-sec.fr<span class="who mono">Ma boutique en ligne</span></h3>
       <p>Ma propre boutique, avec abonnement. Je connais vos problèmes d'e-commerçant parce que je les ai.</p>
       <div class="stack mono"><span>Shopify</span><span>Liquid</span><span>Meta Ads</span></div>
     </article>
 
     <article class="proj">
-      <div class="num mono">P.03</div>
+      <div class="num"><div class="logo pad" style="background:#fff"><img src="logos/living-store.webp" alt="Logo Living Store" loading="lazy"></div><span class="mono">P.03</span></div>
       <h3 class="cond">Logiciel des vendeurs<span class="who mono">Living Store</span></h3>
       <p>Devis, commandes, SAV et documents. <strong>Un seul écran</strong> à la place des fichiers éparpillés.</p>
       <div class="stack mono"><span>Ruby on Rails</span><span>PostgreSQL</span></div>
     </article>
 
     <article class="proj">
-      <div class="num mono">P.04</div>
+      <div class="num"><div class="logo txt" style="background:var(--blue)"><span class="cond">HomeCycle</span></div><span class="mono">P.04</span></div>
       <h3 class="cond">Tout dans un seul outil<span class="who mono">HomeCycle</span></h3>
       <p>Contrats, factures et livraisons regroupés dans <strong>un seul logiciel</strong> au lieu de quatre.</p>
       <div class="stack mono"><span>Odoo</span><span>Stripe</span><span>API</span></div>
     </article>
 
     <article class="proj">
-      <div class="num mono">P.05</div>
+      <div class="num"><div class="logo txt ink" style="background:var(--lime)"><span class="cond">Auto&shy;matisation</span></div><span class="mono">P.05</span></div>
       <h3 class="cond">Articles et relances automatiques<span class="who mono">Automatisation</span></h3>
       <p><strong>Un article publié chaque jour</strong> sans y toucher, et chaque prospect relancé automatiquement.</p>
       <div class="stack mono"><span>Activepieces</span><span>LLM</span><span>HubSpot</span></div>
     </article>
 
     <article class="proj">
-      <div class="num mono">P.06</div>
+      <div class="num"><div class="logo" style="background:#ca623d"><img src="logos/anecto.webp" alt="Logo Anecto" loading="lazy"></div><span class="mono">P.06</span></div>
       <h3 class="cond">Anecto<span class="who mono">Application mobile</span></h3>
       <p>Une anecdote par jour sur le patrimoine local, écrite et vérifiée par une IA.</p>
       <div class="stack mono"><span>Expo</span><span>Supabase</span><span>Edge Functions</span></div>
@@ -346,7 +356,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <blockquote>J'ai été commerçant et chef d'entreprise. Je pars de <em>votre quotidien</em>, pas de la technique.</blockquote>
       <div class="timeline">
         <div class="tl"><span class="mono">Aujourd'hui</span><div><h4>Freelance</h4><p>Pour PME et e-commerçants. Fondateur de Confort-Sec et Tap&See.</p></div></div>
-        <div class="tl"><span class="mono">HomeCycle</span><div><h4>CEO</h4><p>Location d'électroménager, environ 1 000 clients.</p></div></div>
+        <div class="tl"><span class="mono">HomeCycle</span><div><h4>CEO</h4><p>Location d'électroménager, +1 000 clients.</p></div></div>
         <div class="tl"><span class="mono">Living Store<br>Cuir Center</span><div><h4>Co-gérant</h4><p>Magasins de meubles et équipes de vente.</p></div></div>
         <div class="tl"><span class="mono">Pretto</span><div><h4>Fintech</h4><p>Courtage immobilier en ligne.</p></div></div>
       </div>
@@ -372,6 +382,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <input type="hidden" name="_subject" value="Nouveau message depuis nicolasollier.com">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://nicolasollier.com/?envoye=1#contact">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
       <div class="two">
         <label class="field"><span class="mono">Nom *</span><input type="text" name="nom" required autocomplete="name"></label>
@@ -404,6 +415,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
+if (new URLSearchParams(location.search).has('envoye')) {
+  const s0 = document.getElementById('st'); s0.className = 'status ok'; s0.textContent = 'Message envoyé. Je reviens vers vous rapidement.';
+}
 const f = document.getElementById('cf'), st = document.getElementById('st');
 f.addEventListener('submit', async e => {
   e.preventDefault();
@@ -417,8 +431,12 @@ f.addEventListener('submit', async e => {
     if (!r.ok || d.success === 'false' || d.success === false) throw new Error(d.message || 'Erreur');
     f.reset(); st.className = 'status ok'; st.textContent = 'Message envoyé. Je reviens vers vous rapidement.';
   } catch (err) {
-    st.className = 'status err'; st.textContent = "Échec de l'envoi. Écrivez-moi directement à nicolas-ollier@hotmail.fr";
-  } finally { b.disabled = false; }
+    // Si l'envoi en arrière-plan échoue, on envoie le formulaire classiquement
+    st.textContent = 'Envoi en cours...';
+    HTMLFormElement.prototype.submit.call(f);
+    return;
+  }
+  b.disabled = false;
 });
 </script>
 </body>
