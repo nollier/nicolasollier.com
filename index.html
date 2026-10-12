@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolas Ollier · Automatisation & développement web</title>
+<meta name="description" content="Freelance à Bordeaux. J'automatise vos process et je développe vos outils web sur mesure : Rails, Shopify, Odoo, Make, n8n, agents IA.">
+<meta property="og:title" content="Nicolas Ollier · Automatisation & développement web">
+<meta property="og:description" content="Ancien CEO et gérant de magasins devenu développeur. Je construis les outils dont votre équipe a besoin.">
+<meta property="og:url" content="https://nicolasollier.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea; --paper:#fbf9f4; --ink:#16150f; --muted:#6b675c; --line:#d9d3c5;
+  --accent:#d6452b; --accent-soft:#f3d9cf; --chip:#ebe6da;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13120e; --paper:#1b1a15; --ink:#efebe1; --muted:#9a958a; --line:#2f2d26;
+    --accent:#ff6a4d; --accent-soft:#3a1f18; --chip:#25231d;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .logo{font-weight:600;text-decoration:none;letter-spacing:-.01em}
+nav .links{display:flex;gap:28px;align-items:center}
+nav .links a{text-decoration:none;font-size:15px;color:var(--muted)}
+nav .links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg)!important;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink)!important;border:1px solid var(--line)}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.status{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px}
+.dot{width:8px;height:8px;border-radius:50%;background:#2ea44f;box-shadow:0 0 0 4px color-mix(in srgb,#2ea44f 20%,transparent)}
+.hero h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,7.4vw,96px);line-height:.98;letter-spacing:-.02em;max-width:14ch}
+.hero h1 em{color:var(--accent)}
+.hero .lead{margin-top:32px;max-width:580px;font-size:19px;color:var(--muted)}
+.hero .lead strong{color:var(--ink);font-weight:500}
+.hero .ctas{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap}
+.facts{margin-top:80px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.facts div{padding:22px 20px 0 0}
+.facts b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:34px;line-height:1.1}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:48px}
+.sec-head h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);line-height:1.05;letter-spacing:-.01em;max-width:18ch}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column}
+.svc .num{font-family:"Geist Mono",monospace;font-size:13px;color:var(--accent)}
+.svc h3{font-size:21px;font-weight:600;margin:14px 0 10px;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc ul{list-style:none;margin-top:18px;padding-top:18px;border-top:1px dashed var(--line);font-size:15px}
+.svc li{padding:4px 0 4px 18px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:13px;width:8px;height:1px;background:var(--accent)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.proj{grid-column:span 3;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}
+.proj:hover{border-color:var(--ink)}
+.proj.wide{grid-column:span 6;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.proj.third{grid-column:span 2}
+.proj .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tag{font-family:"Geist Mono",monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.proj h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:32px;line-height:1.05;letter-spacing:-.01em}
+.proj p{color:var(--muted);font-size:15.5px}
+.proj .row{display:grid;grid-template-columns:90px 1fr;gap:12px;font-size:15px;padding:10px 0;border-top:1px solid var(--line)}
+.proj .row .mono{font-size:11.5px;padding-top:3px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.stack span{font-family:"Geist Mono",monospace;font-size:12px;background:var(--chip);padding:4px 9px;border-radius:6px}
+.proj a.more{font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent);align-self:flex-start}
+
+/* parcours */
+.timeline{display:grid;gap:0}
+.tl{display:grid;grid-template-columns:220px 1fr 1.4fr;gap:32px;padding:22px 0;border-top:1px solid var(--line)}
+.tl:last-child{border-bottom:1px solid var(--line)}
+.tl h4{font-size:18px;font-weight:600}
+.tl .role{color:var(--muted);font-size:15px}
+.tl p{font-size:15.5px;color:var(--muted)}
+.why{margin-top:48px;display:grid;grid-template-columns:220px 1fr;gap:32px}
+.why blockquote{font-family:"Instrument Serif",serif;font-size:clamp(26px,3vw,36px);line-height:1.2;max-width:28ch}
+.why blockquote em{color:var(--accent)}
+
+/* stack */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tools div{border-top:2px solid var(--ink);padding-top:14px}
+.tools h4{font-size:15px;font-weight:600;margin-bottom:8px}
+.tools p{font-size:15px;color:var(--muted)}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:"Instrument Serif",serif;font-size:44px;color:var(--accent);line-height:1}
+.step h4{margin:12px 0 6px;font-size:17px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-top:none;padding:110px 0}
+.contact .mono{color:color-mix(in srgb,var(--bg) 60%,transparent)}
+.contact h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(44px,7vw,88px);line-height:1;letter-spacing:-.02em;margin:20px 0 28px;max-width:16ch}
+.contact h2 em{color:var(--accent)}
+.contact p{max-width:520px;color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px}
+.contact .ctas{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap}
+.contact .btn{background:var(--accent);color:#fff!important}
+.contact .btn.ghost{background:transparent;border-color:color-mix(in srgb,var(--bg) 30%,transparent);color:var(--bg)!important}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 55%,transparent);font-size:14px;padding:24px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--bg) 15%,transparent);padding-top:24px}
+
+/* reveal */
+.r{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:900px){
+  .sec-head,.why{grid-template-columns:1fr;gap:12px}
+  .services,.steps{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr 1fr}
+  .proj,.proj.third{grid-column:span 6}
+  .proj.wide{grid-template-columns:1fr;gap:20px}
+  .tl{grid-template-columns:1fr;gap:6px}
+  .facts{grid-template-columns:1fr 1fr}
+  nav .links a:not(.btn){display:none}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .hero{padding:64px 0 48px}
+  .tools{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Nicolas Ollier</a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#projets">Projets</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact" class="btn">Me contacter</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="status mono"><span class="dot"></span>Disponible pour des missions freelance · Bordeaux & remote</div>
+    <h1>Je construis les outils que votre équipe <em>attend</em> depuis trop longtemps.</h1>
+    <p class="lead">Automatisation, développement web sur mesure, e-commerce. J'ai dirigé des magasins et une startup avant d'écrire le code. <strong>Je pars de votre process, pas de la techno.</strong></p>
+    <div class="ctas">
+      <a href="#contact" class="btn">Parler de votre projet →</a>
+      <a href="#projets" class="btn ghost">Voir les réalisations</a>
+    </div>
+    <div class="facts">
+      <div><b>~1 000</b><span>clients gérés chez HomeCycle, dont j'étais CEO</span></div>
+      <div><b>2</b><span>magasins de meubles équipés de Tap&See</span></div>
+      <div><b>1 / jour</b><span>article SEO publié en automatique sur confort-sec.fr</span></div>
+      <div><b>3</b><span>métiers vécus de l'intérieur : retail, fintech, e-commerce</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="mono">Ce que je fais</div>
+      <h2>Trois façons de vous faire gagner du temps.</h2>
+    </div>
+    <div class="services">
+      <div class="svc r">
+        <span class="num">01</span>
+        <h3>Automatisation</h3>
+        <p>Les tâches répétitives qui mangent vos journées : relances, saisie, reporting, synchro entre outils.</p>
+        <ul>
+          <li>Workflows Make, n8n, Activepieces</li>
+          <li>Connexion CRM, ERP, boutique, Google Sheets</li>
+          <li>Agents IA qui produisent et publient du contenu</li>
+          <li>Séquences de relance leads (e-mail, SMS)</li>
+        </ul>
+      </div>
+      <div class="svc r">
+        <span class="num">02</span>
+        <h3>Outils web sur mesure</h3>
+        <p>Quand aucun SaaS ne colle à votre métier, je développe l'outil qui manque, utilisé par vos équipes au quotidien.</p>
+        <ul>
+          <li>Applications Ruby on Rails</li>
+          <li>Back-offices, tableaux de bord, outils de vente</li>
+          <li>Apps mobiles React Native / Expo + Supabase</li>
+          <li>Intégrations API et migrations vers Odoo</li>
+        </ul>
+      </div>
+      <div class="svc r">
+        <span class="num">03</span>
+        <h3>E-commerce Shopify</h3>
+        <p>Boutique, abonnements, SEO et acquisition. Je connais les deux côtés : je gère ma propre boutique en production.</p>
+        <ul>
+          <li>Thèmes et sections Liquid sur mesure</li>
+          <li>Abonnements, e-mails transactionnels</li>
+          <li>SEO technique, redirections, contenus</li>
+          <li>Tracking GA4, Meta Ads, Google Ads</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="mono">Réalisations</div>
+      <h2>Des projets en production, pas des maquettes.</h2>
+    </div>
+    <div class="projects">
+
+      <article class="proj wide r">
+        <div>
+          <div class="top"><span class="tag">Outil de vente · IA</span><span class="mono">Client retail</span></div>
+          <h3 style="margin-top:14px">Tap&See</h3>
+          <p style="margin-top:12px">En magasin, le client hésite parce qu'il n'arrive pas à imaginer le canapé chez lui. Tap&See génère un rendu réaliste du modèle choisi, au bon format et dans le bon coloris, intégré dans la photo de son salon. Le vendeur s'en sert pendant la vente.</p>
+          <div class="stack" style="margin-top:20px"><span>IA générative</span><span>Web app</span><span>Tablette vendeur</span></div>
+        </div>
+        <div>
+          <div class="row"><span class="mono">Problème</span><span>Ventes perdues faute de projection</span></div>
+          <div class="row"><span class="mono">Solution</span><span>Rendu photo réaliste, sans 3D à modéliser</span></div>
+          <div class="row"><span class="mono">Résultat</span><span>Utilisé aujourd'hui dans 2 magasins de meubles, dont Cuir Center</span></div>
+        </div>
+      </article>
+
+      <article class="proj r">
+        <div class="top"><span class="tag">Rails · Outil interne</span><span class="mono">Living Store</span></div>
+        <h3>Back-office magasin</h3>
+        <p>Outil sur mesure pour les vendeurs : devis, commandes, suivi du portefeuille depuis le début du mois, accès SAV et documents. Remplace les fichiers éparpillés par un seul écran.</p>
+        <div class="stack"><span>Ruby on Rails</span><span>PostgreSQL</span></div>
+      </article>
+
+      <article class="proj r">
+        <div class="top"><span class="tag">Odoo · Migration</span><span class="mono">HomeCycle</span></div>
+        <h3>Bascule vers Odoo</h3>
+        <p>Migration de tous les outils de HomeCycle (FirmHouse, Google Sheets, Stripe…) vers Odoo pour la location d'électroménager par abonnement. Un seul système pour les contrats, la facturation et la logistique.</p>
+        <div class="stack"><span>Odoo</span><span>Stripe</span><span>API</span></div>
+      </article>
+
+      <article class="proj third r">
+        <div class="top"><span class="tag">Shopify</span></div>
+        <h3>confort-sec.fr</h3>
+        <p>Ma boutique en ligne. Abonnements, sections Liquid, quiz produit, SEO, campagnes Meta et Google.</p>
+        <div class="stack"><span>Shopify</span><span>Liquid</span><span>Meta Ads</span></div>
+      </article>
+
+      <article class="proj third r">
+        <div class="top"><span class="tag">Automatisation</span></div>
+        <h3>Pipeline SEO & leads</h3>
+        <p>Un article publié chaque jour sans intervention, et une séquence de relance automatique pour les leads Meta.</p>
+        <div class="stack"><span>Activepieces</span><span>LLM</span><span>HubSpot</span></div>
+      </article>
+
+      <article class="proj third r">
+        <div class="top"><span class="tag">App mobile · IA</span></div>
+        <h3>Anecto</h3>
+        <p>App iOS / Android sur le patrimoine local. Un agent IA rédige, vérifie et source une anecdote par jour.</p>
+        <div class="stack"><span>Expo</span><span>Supabase</span><span>Edge Functions</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="mono">Parcours</div>
+      <h2>Entrepreneur d'abord. Développeur ensuite.</h2>
+    </div>
+    <div class="timeline r">
+      <div class="tl"><span class="mono">Aujourd'hui</span><div><h4>Freelance</h4><span class="role">Automatisation & dev web</span></div><p>Missions pour PME, commerçants et e-commerçants. Fondateur de Confort-Sec (e-commerce) et de Tap&See.</p></div>
+      <div class="tl"><span class="mono">HomeCycle</span><div><h4>CEO</h4><span class="role">Location d'électroménager</span></div><p>Pilotage d'une startup en abonnement, environ 1 000 clients. Refonte complète des outils sur Odoo.</p></div>
+      <div class="tl"><span class="mono">Living Store · Cuir Center</span><div><h4>Co-gérant</h4><span class="role">Ameublement</span></div><p>Gestion de magasins, équipes de vente, achats. J'y ai codé mes premiers outils internes en Rails.</p></div>
+      <div class="tl"><span class="mono">Pretto</span><div><h4>Fintech</h4><span class="role">Courtage immobilier en ligne</span></div><p>Une startup produit et data, où j'ai appris à industrialiser un process métier.</p></div>
+    </div>
+    <div class="why r">
+      <div class="mono">Pourquoi ça compte</div>
+      <blockquote class="serif">J'ai été à votre place. Je sais ce qu'un outil <em>doit</em> changer dans une journée de travail, et ce qui finit oublié au bout d'un mois.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="mono">Comment je travaille</div>
+      <h2>Simple, rapide, sans effet tunnel.</h2>
+    </div>
+    <div class="steps">
+      <div class="step r"><h4>Appel de cadrage</h4><p>30 minutes pour comprendre votre process et ce qui coince.</p></div>
+      <div class="step r"><h4>Proposition chiffrée</h4><p>Un périmètre clair, un prix fixe ou au jour, un délai.</p></div>
+      <div class="step r"><h4>Livraisons courtes</h4><p>Vous testez une version utilisable très tôt, on ajuste ensemble.</p></div>
+      <div class="step r"><h4>Mise en route</h4><p>Documentation, prise en main par l'équipe, suivi après livraison.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="mono">Outils</div>
+      <h2>Ma boîte à outils.</h2>
+    </div>
+    <div class="tools r">
+      <div><h4>Développement</h4><p>Ruby on Rails, Python, React Native, Expo, Supabase, PostgreSQL</p></div>
+      <div><h4>E-commerce</h4><p>Shopify, Liquid, GraphQL Admin API, abonnements</p></div>
+      <div><h4>Automatisation & IA</h4><p>Make, n8n, Activepieces, agents LLM, API REST</p></div>
+      <div><h4>Gestion & acquisition</h4><p>Odoo, HubSpot, GA4, Meta Ads, Google Ads</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="mono">Contact</div>
+    <h2>Un process à automatiser ? Un outil à <em>construire</em> ?</h2>
+    <p>Décrivez-moi votre besoin en quelques lignes. Je réponds sous 24 h avec une première idée de solution.</p>
+    <div class="ctas">
+      <!-- À COMPLÉTER : ton e-mail, ton profil Malt et ton LinkedIn -->
+      <a href="mailto:contact@nicolasollier.com" class="btn">Écrire un e-mail →</a>
+      <a href="https://www.malt.fr/profile/VOTRE-PROFIL" class="btn ghost" target="_blank" rel="noopener">Profil Malt</a>
+      <a href="https://www.linkedin.com/in/VOTRE-PROFIL" class="btn ghost" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y"></span> Nicolas Ollier · EMEI 3099 SAS · Bordeaux</span>
+    <span>nicolasollier.com</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
