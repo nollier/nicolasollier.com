@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nicolas Ollier · Automatisation & développement web freelance</title>
-<meta name="description" content="Développeur freelance à Bordeaux. Automatisation (Make, n8n, Activepieces), outils web sur mesure (Rails), e-commerce Shopify, Odoo.">
+<meta name="description" content="Freelance à Bordeaux. Création de boutiques Shopify, logiciels sur mesure et automatisation des tâches répétitives.">
 <meta property="og:title" content="Nicolas Ollier · Automatisation & développement web">
-<meta property="og:description" content="J'automatise ce qui vous fait perdre du temps et je développe les outils qui manquent à votre équipe.">
+<meta property="og:description" content="Je fais gagner du temps aux commerçants et PME : boutique en ligne, logiciel sur mesure, tâches automatisées.">
 <meta property="og:image" content="https://nicolasollier.com/nicolas-ollier.jpg">
 <meta property="og:url" content="https://nicolasollier.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,9 +89,16 @@ hr{border:0;border-top:2px solid var(--rule)}
 .svc .n{font-size:15px;display:inline-block;background:var(--ink);color:var(--white);padding:4px 9px;margin-bottom:22px}
 .svc h3{font-size:clamp(36px,3.6vw,54px);margin-bottom:16px}
 .svc p{color:#333;max-width:360px}
-.svc ul{list-style:none;margin-top:22px;border-top:1px solid var(--ink)}
+.svc ul{list-style:none;margin-top:14px;border-top:1px solid var(--ink)}
 .svc li{padding:10px 0;border-bottom:1px solid var(--ink);font-size:15.5px;display:flex;justify-content:space-between;gap:12px}
 .svc li::after{content:"↗";color:var(--blue)}
+.svc p{font-size:19px}
+.tech{margin-top:22px}
+.tech summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);padding:6px 10px}
+.tech summary::-webkit-details-marker{display:none}
+.tech summary::after{content:"+";font-size:15px}
+.tech[open] summary::after{content:"−"}
+.tech summary:hover{background:var(--lime)}
 
 /* projects */
 .proj{display:grid;grid-template-columns:200px 1.1fr 1.4fr 220px;border-bottom:1px solid var(--ink);transition:background .2s}
@@ -201,134 +208,131 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <div class="wrap">
     <a href="#" class="name">NICOLAS OLLIER</a>
     <nav class="mono">
-      <a href="#services">Services</a>
-      <a href="#projets">Projets</a>
+      <a href="#offre">Ce que je propose</a>
+      <a href="#projets">Réalisations</a>
       <a href="#parcours">Parcours</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="dispo mono"><span class="pulse"></span><span class="txt">Dispo pour missions</span></div>
+    <div class="dispo mono"><span class="pulse"></span><span class="txt">Disponible</span></div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
     <div class="hero-left">
-      <h1 class="cond">J'automatise ce qui vous fait <span class="hl">perdre</span> du temps<span class="blue">.</span></h1>
+      <h1 class="cond">Je vous fais <span class="hl">gagner</span> du temps<span class="blue">.</span></h1>
       <div class="hero-sub">
-        <p>Développeur freelance à Bordeaux. Automatisations, outils web sur mesure, e-commerce Shopify. Avant de coder, j'ai géré des magasins et dirigé une startup : je pars de votre process, pas de la techno.</p>
-        <a href="#contact" class="btn">Parlons de votre projet <span class="arr">→</span></a>
+        <p>Je suis Nicolas, à Bordeaux. J'aide les commerçants et les PME avec le digital : boutique en ligne, logiciel sur mesure, tâches qui se font toutes seules.</p>
+        <a href="#contact" class="btn">Me contacter <span class="arr">→</span></a>
       </div>
     </div>
     <div class="hero-right">
       <div class="photo">
         <img src="nicolas-ollier.jpg" alt="Portrait de Nicolas Ollier" width="900" height="1012">
-        <span class="stamp mono">Bordeaux · Remote</span>
+        <span class="stamp mono">Bordeaux · À distance</span>
       </div>
-      <div class="cap mono"><span>Nicolas Ollier</span><span>Dev & automatisation</span></div>
+      <div class="cap mono"><span>Nicolas Ollier</span><span>Ancien commerçant et chef d'entreprise</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="offre">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx mono">01</div><h2 class="cond">Ce que je propose</h2></div>
+    <div class="services">
+      <div class="svc">
+        <span class="n mono">A</span>
+        <h3 class="cond">Votre boutique en ligne</h3>
+        <p>Je crée votre boutique Shopify, prête à vendre et facile à trouver sur Google.</p>
+        <details class="tech"><summary class="mono">Le détail technique</summary>
+          <ul>
+            <li>Thèmes et sections Liquid</li>
+            <li>Abonnements, e-mails</li>
+            <li>SEO technique et contenu</li>
+            <li>GA4, Meta Ads, Google Ads</li>
+          </ul>
+        </details>
+      </div>
+      <div class="svc">
+        <span class="n mono">B</span>
+        <h3 class="cond">Des tâches qui se font seules</h3>
+        <p>Relances clients, factures, tableaux de suivi : ce que vous refaites à la main chaque semaine.</p>
+        <details class="tech"><summary class="mono">Le détail technique</summary>
+          <ul>
+            <li>Make, n8n, Activepieces</li>
+            <li>Synchro CRM, ERP, Shopify, Sheets</li>
+            <li>Agents IA (contenu, rédaction)</li>
+            <li>Séquences de relance HubSpot</li>
+          </ul>
+        </details>
+      </div>
+      <div class="svc">
+        <span class="n mono">C</span>
+        <h3 class="cond">Le logiciel qui vous manque</h3>
+        <p>Quand aucun logiciel ne colle à votre métier, je crée le vôtre. Simple et utilisé tous les jours.</p>
+        <details class="tech"><summary class="mono">Le détail technique</summary>
+          <ul>
+            <li>Applications Ruby on Rails</li>
+            <li>Apps mobiles Expo + Supabase</li>
+            <li>Intégrations API</li>
+            <li>Migration vers Odoo</li>
+          </ul>
+        </details>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="ticker" aria-hidden="true">
   <div class="track">
-    <span>Ruby on Rails</span><span class="star">✦</span><span>Shopify</span><span class="star">✦</span><span>Make</span><span class="star">✦</span><span>n8n</span><span class="star">✦</span><span>Activepieces</span><span class="star">✦</span><span>Odoo</span><span class="star">✦</span><span>Python</span><span class="star">✦</span><span>Supabase</span><span class="star">✦</span><span>Agents IA</span><span class="star">✦</span><span>HubSpot</span><span class="star">✦</span><span>Meta Ads</span><span class="star">✦</span>
-    <span>Ruby on Rails</span><span class="star">✦</span><span>Shopify</span><span class="star">✦</span><span>Make</span><span class="star">✦</span><span>n8n</span><span class="star">✦</span><span>Activepieces</span><span class="star">✦</span><span>Odoo</span><span class="star">✦</span><span>Python</span><span class="star">✦</span><span>Supabase</span><span class="star">✦</span><span>Agents IA</span><span class="star">✦</span><span>HubSpot</span><span class="star">✦</span><span>Meta Ads</span><span class="star">✦</span>
+    <span>En détail</span><span class="star">✦</span><span>Réalisations</span><span class="star">✦</span><span>Parcours</span><span class="star">✦</span><span>En détail</span><span class="star">✦</span><span>Réalisations</span><span class="star">✦</span><span>Parcours</span><span class="star">✦</span>
+    <span>En détail</span><span class="star">✦</span><span>Réalisations</span><span class="star">✦</span><span>Parcours</span><span class="star">✦</span><span>En détail</span><span class="star">✦</span><span>Réalisations</span><span class="star">✦</span><span>Parcours</span><span class="star">✦</span>
   </div>
 </div>
 
-<section class="sec">
-  <div class="wrap facts">
-    <div class="fact"><b class="cond">~1000</b><span>clients gérés chez HomeCycle, dont j'étais CEO</span></div>
-    <div class="fact"><b class="cond">2</b><span>magasins de meubles équipés de mon outil Tap&See</span></div>
-    <div class="fact"><b class="cond">1/jour</b><span>article SEO publié sans intervention sur confort-sec.fr</span></div>
-    <div class="fact"><b class="cond">3</b><span>secteurs vécus de l'intérieur : retail, fintech, e-commerce</span></div>
-  </div>
-</section>
-
-<section class="sec" id="services">
-  <div class="wrap">
-    <div class="sec-head"><div class="idx mono">01 / Services</div><h2 class="cond">Ce que je fais</h2></div>
-    <div class="services">
-      <div class="svc">
-        <span class="n mono">A</span>
-        <h3 class="cond">Automatisation</h3>
-        <p>Relances, saisie, reporting, synchro entre outils. Tout ce que votre équipe refait à la main chaque semaine.</p>
-        <ul>
-          <li>Make, n8n, Activepieces</li>
-          <li>CRM, ERP, boutique, Sheets</li>
-          <li>Agents IA qui produisent du contenu</li>
-          <li>Séquences de relance leads</li>
-        </ul>
-      </div>
-      <div class="svc">
-        <span class="n mono">B</span>
-        <h3 class="cond">Outils sur mesure</h3>
-        <p>Quand aucun logiciel ne colle à votre métier, je développe celui qui manque. Simple, rapide, utilisé tous les jours.</p>
-        <ul>
-          <li>Applications Ruby on Rails</li>
-          <li>Back-offices, outils de vente</li>
-          <li>Apps mobiles Expo + Supabase</li>
-          <li>Intégrations API, migration Odoo</li>
-        </ul>
-      </div>
-      <div class="svc">
-        <span class="n mono">C</span>
-        <h3 class="cond">E-commerce Shopify</h3>
-        <p>Je gère ma propre boutique en production. Je connais les problèmes d'un e-commerçant parce que je les ai.</p>
-        <ul>
-          <li>Thèmes et sections Liquid</li>
-          <li>Abonnements, e-mails</li>
-          <li>SEO technique et contenu</li>
-          <li>GA4, Meta Ads, Google Ads</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" id="projets">
   <div class="wrap">
-    <div class="sec-head"><div class="idx mono">02 / Projets</div><h2 class="cond">En production</h2></div>
+    <div class="sec-head"><div class="idx mono">02 / En détail</div><h2 class="cond">Réalisations</h2></div>
 
     <article class="proj feature">
       <div class="num mono">P.01</div>
-      <h3 class="cond">Tap&See<span class="who mono">Outil de vente · IA</span></h3>
-      <p>En magasin, le client hésite parce qu'il n'arrive pas à imaginer le canapé chez lui. Tap&See génère un rendu réaliste du modèle, au bon format et dans le bon coloris, dans la photo de son salon. <strong>Utilisé dans 2 magasins de meubles, dont Cuir Center.</strong></p>
+      <h3 class="cond">Tap&See<span class="who mono">Aide à la vente en magasin</span></h3>
+      <p>Le client voit le canapé dans la photo de son salon avant d'acheter. <strong>Utilisé dans 2 magasins, dont Cuir Center.</strong></p>
       <div class="stack mono"><span>IA générative</span><span>Web app</span><span>Tablette</span></div>
     </article>
 
     <article class="proj">
       <div class="num mono">P.02</div>
-      <h3 class="cond">Back-office magasin<span class="who mono">Living Store</span></h3>
-      <p>Outil interne pour les vendeurs : devis, commandes, suivi du portefeuille du mois, SAV et documents. <strong>Un seul écran</strong> à la place des fichiers éparpillés.</p>
-      <div class="stack mono"><span>Ruby on Rails</span><span>PostgreSQL</span></div>
-    </article>
-
-    <article class="proj">
-      <div class="num mono">P.03</div>
-      <h3 class="cond">Bascule Odoo<span class="who mono">HomeCycle</span></h3>
-      <p>Migration de tous les outils d'une startup de location d'électroménager (FirmHouse, Google Sheets, Stripe) vers <strong>un seul système</strong> : contrats, facturation, logistique.</p>
-      <div class="stack mono"><span>Odoo</span><span>Stripe</span><span>API</span></div>
-    </article>
-
-    <article class="proj">
-      <div class="num mono">P.04</div>
-      <h3 class="cond">confort-sec.fr<span class="who mono">Ma boutique</span></h3>
-      <p>E-commerce de protections pour adultes avec modèle d'abonnement. Sections Liquid sur mesure, quiz produit, SEO, campagnes Meta et Google.</p>
+      <h3 class="cond">confort-sec.fr<span class="who mono">Ma boutique en ligne</span></h3>
+      <p>Ma propre boutique, avec abonnement. Je connais vos problèmes d'e-commerçant parce que je les ai.</p>
       <div class="stack mono"><span>Shopify</span><span>Liquid</span><span>Meta Ads</span></div>
     </article>
 
     <article class="proj">
+      <div class="num mono">P.03</div>
+      <h3 class="cond">Logiciel des vendeurs<span class="who mono">Living Store</span></h3>
+      <p>Devis, commandes, SAV et documents. <strong>Un seul écran</strong> à la place des fichiers éparpillés.</p>
+      <div class="stack mono"><span>Ruby on Rails</span><span>PostgreSQL</span></div>
+    </article>
+
+    <article class="proj">
+      <div class="num mono">P.04</div>
+      <h3 class="cond">Tout dans un seul outil<span class="who mono">HomeCycle</span></h3>
+      <p>Contrats, factures et livraisons regroupés dans <strong>un seul logiciel</strong> au lieu de quatre.</p>
+      <div class="stack mono"><span>Odoo</span><span>Stripe</span><span>API</span></div>
+    </article>
+
+    <article class="proj">
       <div class="num mono">P.05</div>
-      <h3 class="cond">Pipeline SEO & leads<span class="who mono">Automatisation</span></h3>
-      <p><strong>Un article publié chaque jour</strong> sans intervention, et une séquence de relance automatique pour chaque lead entrant.</p>
+      <h3 class="cond">Articles et relances automatiques<span class="who mono">Automatisation</span></h3>
+      <p><strong>Un article publié chaque jour</strong> sans y toucher, et chaque prospect relancé automatiquement.</p>
       <div class="stack mono"><span>Activepieces</span><span>LLM</span><span>HubSpot</span></div>
     </article>
 
     <article class="proj">
       <div class="num mono">P.06</div>
-      <h3 class="cond">Anecto<span class="who mono">App iOS / Android</span></h3>
-      <p>App mobile sur le patrimoine local. Un agent IA rédige, vérifie et source une anecdote par jour.</p>
+      <h3 class="cond">Anecto<span class="who mono">Application mobile</span></h3>
+      <p>Une anecdote par jour sur le patrimoine local, écrite et vérifiée par une IA.</p>
       <div class="stack mono"><span>Expo</span><span>Supabase</span><span>Edge Functions</span></div>
     </article>
   </div>
@@ -336,28 +340,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
 <section class="sec" id="parcours">
   <div class="wrap">
-    <div class="sec-head"><div class="idx mono">03 / Parcours</div><h2 class="cond">Entrepreneur d'abord</h2></div>
+    <div class="sec-head"><div class="idx mono">03 / En détail</div><h2 class="cond">Parcours</h2></div>
     <div class="about">
       <div class="idx"></div>
-      <blockquote>J'ai été à votre place. Je sais ce qu'un outil <em>doit changer</em> dans une journée de travail, et ce qui finit oublié au bout d'un mois.</blockquote>
+      <blockquote>J'ai été commerçant et chef d'entreprise. Je pars de <em>votre quotidien</em>, pas de la technique.</blockquote>
       <div class="timeline">
-        <div class="tl"><span class="mono">Aujourd'hui</span><div><h4>Freelance</h4><p>Automatisation et dev web pour PME et e-commerçants. Fondateur de Confort-Sec et Tap&See.</p></div></div>
-        <div class="tl"><span class="mono">HomeCycle</span><div><h4>CEO</h4><p>Location d'électroménager par abonnement, environ 1 000 clients.</p></div></div>
-        <div class="tl"><span class="mono">Living Store<br>Cuir Center</span><div><h4>Co-gérant</h4><p>Magasins d'ameublement, équipes de vente. Mes premiers outils Rails.</p></div></div>
-        <div class="tl"><span class="mono">Pretto</span><div><h4>Fintech</h4><p>Courtage immobilier en ligne, industrialisation de process.</p></div></div>
+        <div class="tl"><span class="mono">Aujourd'hui</span><div><h4>Freelance</h4><p>Pour PME et e-commerçants. Fondateur de Confort-Sec et Tap&See.</p></div></div>
+        <div class="tl"><span class="mono">HomeCycle</span><div><h4>CEO</h4><p>Location d'électroménager, environ 1 000 clients.</p></div></div>
+        <div class="tl"><span class="mono">Living Store<br>Cuir Center</span><div><h4>Co-gérant</h4><p>Magasins de meubles et équipes de vente.</p></div></div>
+        <div class="tl"><span class="mono">Pretto</span><div><h4>Fintech</h4><p>Courtage immobilier en ligne.</p></div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><div class="idx mono">04 / Méthode</div><h2 class="cond">Comment on avance</h2></div>
-    <div class="steps">
-      <div class="step"><b class="cond">01</b><h4>Appel de cadrage</h4><p>30 minutes pour comprendre votre process et ce qui coince.</p></div>
-      <div class="step"><b class="cond">02</b><h4>Proposition chiffrée</h4><p>Périmètre clair, prix fixe ou au jour, délai annoncé.</p></div>
-      <div class="step"><b class="cond">03</b><h4>Livraisons courtes</h4><p>Une version utilisable très tôt, on ajuste ensemble.</p></div>
-      <div class="step"><b class="cond">04</b><h4>Mise en route</h4><p>Documentation, prise en main, suivi après livraison.</p></div>
     </div>
   </div>
 </section>
@@ -366,8 +358,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <div class="wrap">
     <div class="contact-left">
       <div>
-        <div class="mono" style="margin-bottom:18px">05 / Contact</div>
-        <h2 class="cond">Un process à automatiser&nbsp;?</h2>
+        <div class="mono" style="margin-bottom:18px">04 / Contact</div>
+        <h2 class="cond">Parlons de votre projet</h2>
+        <p style="margin-top:18px;font-size:19px">On commence par un appel de 30 minutes.</p>
       </div>
       <div class="direct">
         <a href="mailto:nicolas-ollier@hotmail.fr"><span>nicolas-ollier@hotmail.fr</span><span>→</span></a>
@@ -387,14 +380,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <label class="field"><span class="mono">E-mail *</span><input type="email" name="email" required autocomplete="email"></label>
       <label class="field"><span class="mono">Sujet</span>
         <select name="sujet">
-          <option>Automatisation</option>
-          <option>Outil web sur mesure</option>
-          <option>Shopify / e-commerce</option>
-          <option>Odoo / intégration</option>
+          <option>Boutique en ligne</option>
+          <option>Automatiser des tâches</option>
+          <option>Logiciel sur mesure</option>
           <option>Autre</option>
         </select>
       </label>
-      <label class="field"><span class="mono">Votre besoin *</span><textarea name="message" required placeholder="Ce qui vous prend du temps, les outils utilisés, le délai souhaité..."></textarea></label>
+      <label class="field"><span class="mono">Votre besoin *</span><textarea name="message" required placeholder="Expliquez-moi simplement ce qui vous prend du temps..."></textarea></label>
       <div class="form-foot">
         <button type="submit" class="btn">Envoyer <span class="arr">→</span></button>
         <span class="status" id="st" role="status"></span>
