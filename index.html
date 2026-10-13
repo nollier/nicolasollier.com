@@ -434,10 +434,9 @@ f.addEventListener('submit', async e => {
     if (!r.ok || d.success === 'false' || d.success === false) throw new Error(d.message || 'Erreur');
     f.reset(); st.className = 'status ok'; st.textContent = 'Message envoyé. Je reviens vers vous rapidement.';
   } catch (err) {
-    // Si l'envoi en arrière-plan échoue, on envoie le formulaire classiquement
-    st.textContent = 'Envoi en cours...';
-    HTMLFormElement.prototype.submit.call(f);
-    return;
+    // On reste sur le site : on affiche l'erreur au lieu de basculer vers FormSubmit
+    st.className = 'status err';
+    st.textContent = "L'envoi a échoué. Écrivez-moi directement à contact@nicolasollier.com.";
   }
   b.disabled = false;
 });
