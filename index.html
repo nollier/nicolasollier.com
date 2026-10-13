@@ -373,12 +373,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         <p style="margin-top:18px;font-size:19px">On commence par un appel de 30 minutes.</p>
       </div>
       <div class="direct">
-        <a href="mailto:nicolas-ollier@hotmail.fr"><span>nicolas-ollier@hotmail.fr</span><span>→</span></a>
+        <a href="mailto:contact@nicolasollier.com"><span>contact@nicolasollier.com</span><span>→</span></a>
         <a href="https://www.linkedin.com/in/nicolas-ollier-126959192/" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a>
       </div>
     </div>
 
-    <form id="cf" action="https://formsubmit.co/nicolas-ollier@hotmail.fr" method="POST">
+    <form id="cf" action="https://formsubmit.co/contact@nicolasollier.com" method="POST">
       <input type="hidden" name="_subject" value="Nouveau message depuis nicolasollier.com">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -427,7 +427,7 @@ f.addEventListener('submit', async e => {
   const b = f.querySelector('button'); b.disabled = true;
   st.className = 'status'; st.textContent = 'Envoi en cours...';
   try {
-    const r = await fetch('https://formsubmit.co/ajax/nicolas-ollier@hotmail.fr', {
+    const r = await fetch('https://formsubmit.co/ajax/contact@nicolasollier.com', {
       method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f)
     });
     const d = await r.json();
